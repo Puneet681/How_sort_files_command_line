@@ -11,6 +11,7 @@ def main(path,main_copy_path):
     file_sort_log = FS.setup_logger("File_sort",log_file= "log.log", level = FS.logging.INFO)
     file_sort_log.log(level=FS.logging.INFO,msg="all files from scr_path are moved and are sorted in copy_path")
     log_file.close()
+    
 
 
 pars = argparse.ArgumentParser()
