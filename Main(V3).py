@@ -14,12 +14,12 @@ def main(path,main_copy_path,Remove):
     
 
 
-# pars = argparse.ArgumentParser()
-# pars.add_argument("-p" , "--path" , action='append', help='provide the absolute path of the source folder and copy folder in a list as -p "SOURCE PATH" -p "COPY PATH"')
-# args = pars.parse_args()
-# print(args)
-# s_path = args.path[0]
-# c_path = args.path[1]
+pars = argparse.ArgumentParser()
+pars.add_argument("-p" , "--path" , action='append', help='provide the absolute path of the source folder and copy folder in a list as -p "SOURCE PATH" -p "COPY PATH"')
+args = pars.parse_args()
+print(args)
+s_path = args.path[0]
+c_path = args.path[1]
 
 
 if __name__ =='__main__':

@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 import webbrowser
 import File_Sort_V3 as FS
-import argparse
 
 app = Flask(__name__)
 

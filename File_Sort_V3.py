@@ -4,7 +4,6 @@ import os
 import time
 import shutil
 import logging
-import sys
 
 formatter = logging.Formatter('%(asctime)s %(name)s %(levelname)s %(message)s')
 def setup_logger(name, log_file, level=logging.INFO):
