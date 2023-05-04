@@ -190,4 +190,4 @@ def copy_file(n_scr_copy_path=dict,main_copy_path=str , Remove = bool):
                 copy_file_log = setup_logger("copy_file",log_file= "log.log", level = logging.INFO)
                 copy_file_log.log(level=logging.INFO,msg="copy_done")
                 log_file.close()
-                # print(True)
+                # print(True) 

@@ -252,4 +252,4 @@ file_sort(path= str(scrpath),copy_path=str(copypath))
 
 # command to run the program in cmd
 # pushd <absuloute path of this file> & python file_sort.py -p "D:\test" -p "D:\copy path test"  (geralized)
-# pushd D:\python scripts\.pyfiles & python file_sort.py -p "D:\test" -p "D:\copy path test" (personal)
+# pushd D:\python scripts\.pyfiles & python file_sort.py -p "D:\test" -p "D:\copy path test" (personal) 

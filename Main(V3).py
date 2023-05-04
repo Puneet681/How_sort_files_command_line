@@ -33,3 +33,4 @@ if __name__ =='__main__':
 # pushd <absuloute path of this file> & python Main.py -p "D:\test" -p "D:\copy path test"  (geralized)
 
 # pushd D:\python scripts\projects\How_sort_files_from_command_line & python Main.py -p "D:\test" -p "D:\copy path test" (Only for personal Use)
+ 
