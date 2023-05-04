@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>File Sort</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <h1>File Sort</h1>
+  <form method="POST">
+    <label for="string1">Source Location:</label>
+    <input type="text" id="string1" name="string1" required>
+    <label for="string2">Destination Location:</label>
+    <input type="text" id="string2" name="string2" required>
+    <button type="submit">Sort</button>
+  </form>
+
+  {% if result %}
+    <p>Result: {{ result }}</p>
+  {% endif %}
+
+  <script src="script.js"></script>
+</body>
+</html>
