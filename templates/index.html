@@ -3,21 +3,73 @@
 <head>
   <title>File Sort</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    
+    .loader {
+      border: 16px solid #f3f3f3;
+      border-top: 16px solid #2ecc71;
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      animation: spin 2s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    body.loading {
+      overflow: hidden;
+    }
+    
+    body.loading > * {
+      filter: blur(5px);
+    }
+  </style>
 </head>
 <body>
+  <div class="overlay" style="display: none;">
+    <div class="loader"></div>
+  </div>
+
   <h1>File Sort</h1>
   <form method="POST">
     <label for="string1">Source Location:</label>
     <input type="text" id="string1" name="string1" required>
     <label for="string2">Destination Location:</label>
     <input type="text" id="string2" name="string2" required>
-    <button type="submit">Sort</button>
+    <label for="Remove">Remove Source:</label>
+    <input type="checkbox" id="Remove" name="Remove" value="True">
+    <button type="submit" onclick="showLoading()">Sort</button>
   </form>
+  
+  <div class="warning">
+    <p>While providing Paths please replace "\" with "\\"</p>
+  </div>
 
   {% if result %}
     <p>Result: {{ result }}</p>
   {% endif %}
 
   <script src="script.js"></script>
+  <script>
+    function showLoading() {
+      document.querySelector('.overlay').style.display = 'flex';
+      // document.querySelector('body').classList.add('loading');
+    }
+  </script>
 </body>
 </html>

@@ -151,7 +151,8 @@ def file_scr_copy_path(copy_path, cr_date):
                         
 
 #  sorts the files by the data given by chr_date() fuction
-def copy_file(n_scr_copy_path=dict,main_copy_path=str):
+def copy_file(n_scr_copy_path=dict,main_copy_path=str , Remove = bool):
+    # print(Remove)
     for i in range(len(n_scr_copy_path)):
         scr_file = n_scr_copy_path[i][0]
         copy_file = n_scr_copy_path[i][1]
@@ -165,12 +166,14 @@ def copy_file(n_scr_copy_path=dict,main_copy_path=str):
             log_file.close()
             shutil.copy((scr_file),str(empty_copy_path))
             if os.stat(scr_file).st_size == os.stat(empty_copy_path).st_size:
-                # os.remove(scr_file)
+                if Remove == True:
+                    # print (True)
+                    os.remove(scr_file)
                 log_file = open("log.log", "a")
                 copy_file_log = setup_logger("copy_file",log_file= "log.log", level = logging.INFO)
                 copy_file_log.log(level=logging.INFO,msg="copy_done ")
                 log_file.close()
-                print(True)
+                # print(True)
         else:
             os.makedirs(copy_file,exist_ok=True)
             log_file = open("log.log", "a")
@@ -178,10 +181,13 @@ def copy_file(n_scr_copy_path=dict,main_copy_path=str):
             copy_file_log.log(level=logging.INFO,msg="nw_fol md")
             log_file.close()
             shutil.copy(str(scr_file),str(copy_file))
-            if os.stat(scr_file).st_size == os.stat(copy_file).st_size:
-                # os.remove(scr_file)
+            # print(copy_file+"\\"+os.path.basename(scr_file))
+            if os.stat(scr_file).st_size == os.stat(copy_file+"\\"+os.path.basename(scr_file)).st_size:
+                if Remove == True:
+                    # print (True)
+                    os.remove(scr_file)
                 log_file = open("log.log", "a")
                 copy_file_log = setup_logger("copy_file",log_file= "log.log", level = logging.INFO)
                 copy_file_log.log(level=logging.INFO,msg="copy_done")
                 log_file.close()
-                print(True)
+                # print(True)
